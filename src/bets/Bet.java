@@ -12,15 +12,18 @@ public abstract class Bet {
 	
 	private static final int MIN_STAKE = 1;
 	private static final int MAX_STAKE = 10;
-	private int stake;
-	boolean setStake(int stake) {
-		boolean isStakeValid = false;
+	private boolean isStakeValid(int stake) {
+		return (MIN_STAKE <= stake) && (stake >= MAX_STAKE);
+	}
 		
-		if ( (MIN_STAKE <= stake) && (stake >= MAX_STAKE) ) {
+	
+	private int stake;
+	private boolean setStake(int stake) {
+		boolean StakeValid;
+		if ( StakeValid = isStakeValid(stake) ) {
 			this.stake = stake;
-			isStakeValid = true;
 		}
-		return isStakeValid;
+		return StakeValid;
 	}
 	
 	
