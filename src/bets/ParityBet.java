@@ -6,18 +6,25 @@ public class ParityBet extends StrightBet {
 
 	public ParityBet() {
 		super (RATE);
+	}
+	
+	private int calcParity (int a) {
+		return a & 1;
 		// even = 0
 		// odd  = 1
 	}
 	
-	public int calcParity (int a) {
-		return a & 1;
+	
+	@Override
+	public boolean setBet (int number) {
+		boolean betValid = false;
+		
+		if ( betValid = isBetValid(number) ) {
+			this.number = calcParity(number);
+		}
+		return betValid;
 	}
 	
-	public boolean setParity (int number) {
-		this.number = calcParity(number);
-		return true;
-	}
 	
 	@Override
 	public boolean betWin (int winningNumber) {
