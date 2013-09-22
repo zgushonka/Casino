@@ -2,8 +2,7 @@ package bets;
 
 //	Base Class for all Bets
 public abstract class Bet {
-			
-	
+
 	
 	//	stake to win ratio
 	private final int rate;
@@ -43,8 +42,8 @@ public abstract class Bet {
 	
 		
 	
-	//	storage for bet number
-	// if success returns true
+	//	storage for bet number/code number
+	//	if success returns true
 	private int number;
 	protected boolean setBet(int number) {
 		boolean BetValid = isNumberValid(number);

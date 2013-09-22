@@ -1,6 +1,6 @@
 package bets;
 
-public class ParityBet extends StrightBet {
+public class ParityBet extends Bet {
 	
 	private static final int RATE = 1;
 

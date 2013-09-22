@@ -11,14 +11,19 @@ public class DozenBet extends Bet {
 
 	@Override
 	protected int calcBet (int number) {
+		
+		int sector;
+		
 		if (number < 13) {
-			return 0;
+			sector = 0;
 		}
 		else if (number < 25) {
-			return 1;
+			sector = 1;
 		} else {
-			return 2;
+			sector = 2;
 		}
+		
+		return sector;
 	}
 	
 }

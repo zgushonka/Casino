@@ -14,10 +14,4 @@ public class StrightBet extends Bet {
 		return number;
 	}
 	
-	
-	// constructor for subclasses
-	protected StrightBet (int rate) {
-		super (rate);
-	}
-	
 }
