@@ -20,33 +20,14 @@ public class ColourBet extends Bet {
 			1,	0,	1,	0,	0,	1,	0,	1,	0,	1,	0,	1
 	};
 	
-	private int calcColour (int number) {
+	@Override
+	protected int calcBet (int number) {
 		return colour[number];
 		// black = 0
 		// red	 = 1
-	}	
-	
-	@Override
-	public boolean setBet (int number) {
-		boolean betValid = false;
-		
-		if ( betValid = isBetValid(number) ) {
-			this.number = calcColour(number);
-		}
-		return betValid;
-	}
-
-	@Override
-	public boolean betWin(int winningNumber) {
-		int winningColour = calcColour(winningNumber);
-		
-		boolean betWin = (this.number == winningColour );
-		return betWin;
 	}
 
 }
 
-
 //red 	1, 3, 5, 7,  9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36
 //black	2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35
-

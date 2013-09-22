@@ -7,34 +7,17 @@ public class StrightBet extends Bet {
 	public StrightBet () {
 		super (RATE);
 	}
+		
+	
+	@Override
+	protected int calcBet(int number) {
+		return number;
+	}
 	
 	
 	// constructor for subclasses
 	protected StrightBet (int rate) {
 		super (rate);
-	} 	
-	
-	
-	
-	@Override
-	public boolean setBet(int number) {
-		boolean BetValid = false;
-				
-		if ( BetValid = isBetValid(number) ) {
-			this.number = number;
-		} 
-		return BetValid;
 	}
-
 	
-	@Override
-	public boolean betWin(int winningNumber) {
-		boolean betWin = false;
-		
-		if (this.number == winningNumber) {
-			betWin = true;
-		}
-		return betWin;
-	}
-
 }
