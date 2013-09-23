@@ -9,6 +9,8 @@ public class Player {
 	public Player(String name, String password) {
 		this.name = name;
 		this.password = password;
+		
+		// TODO generate UID
 	}
 	
 	public String getName() {
@@ -18,7 +20,5 @@ public class Player {
 	public boolean loginOk (String password) {
 		return (this.password == password);
 	}
-	
-	
 	
 }

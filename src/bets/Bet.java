@@ -35,7 +35,6 @@ public abstract class Bet {
 	
 //	Constructor. 
 	protected Bet (int rate) {
-		
 		this.rate = rate;
 	}
 	
@@ -68,7 +67,7 @@ public abstract class Bet {
 		return BetValid;
 	}
 	
-	protected int getNumber() {
+	public int getNumber() {
 		return number;
 	 }
 	

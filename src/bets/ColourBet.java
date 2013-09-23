@@ -9,7 +9,7 @@ public class ColourBet extends Bet {
 	}
 	
 	
-	private static final int colour[] = {
+	private static final int colourFor[] = {
 //		0	1	2	3	4	5	6	7	8	9	10	11	12
 		0,	1,	0,	1,	0,	1,	0,	1,	0,	1,	0,	0,	1,
 			
@@ -22,7 +22,7 @@ public class ColourBet extends Bet {
 	
 	@Override
 	protected int calcBetCode (int number) {
-		return colour[number];
+		return colourFor[number];
 		// black = 0
 		// red	 = 1
 	}

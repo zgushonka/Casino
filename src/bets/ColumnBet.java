@@ -11,8 +11,9 @@ public class ColumnBet extends Bet {
 
 	@Override
 	protected int calcBetCode(int number) {
-		int line = (number - 1) % 3;
-		return line;
+		// shift to zero and switch column
+		int column = (number - 1) % 3;
+		return column;
 	}
 
 }

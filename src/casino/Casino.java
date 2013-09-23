@@ -14,12 +14,21 @@ public class Casino {
 		
 		Bet bet01 = new ColumnBet();
 		
+		
 		boolean betCreated = bet01.createBet(1, 1);
 		System.out.println("betCreated - " + betCreated);
 		
-		for (int winNumber = 1; winNumber < 37; winNumber++) {
-			int win = bet01.calcBetResult(winNumber);
-			System.out.println("win for " + winNumber + "        " + win);
+		
+		Roulette roulette = new Roulette();
+		
+		int win = 0;
+		
+		for (int i = 1; i < 50; i++) {
+			
+			int winNumber = roulette.performSpin();
+			win += bet01.calcBetResult(winNumber);
+			
+			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + win);
 		}
 		
 	}
