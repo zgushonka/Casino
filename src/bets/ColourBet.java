@@ -21,7 +21,7 @@ public class ColourBet extends Bet {
 	};
 	
 	@Override
-	protected int calcBet (int number) {
+	protected int calcBetCode (int number) {
 		return colour[number];
 		// black = 0
 		// red	 = 1

@@ -10,7 +10,7 @@ public class DozenBet extends Bet {
 	
 
 	@Override
-	protected int calcBet (int number) {
+	protected int calcBetCode (int number) {
 		
 		int sector;
 		

@@ -9,7 +9,7 @@ public class HalfBet extends Bet {
 	}
 
 	@Override
-	protected int calcBet(int number) {
+	protected int calcBetCode(int number) {
 		if (number < 19) {
 			return 0;
 		}

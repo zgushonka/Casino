@@ -10,7 +10,7 @@ public class StrightBet extends Bet {
 		
 	
 	@Override
-	protected int calcBet(int number) {
+	protected int calcBetCode(int number) {
 		return number;
 	}
 	

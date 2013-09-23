@@ -10,7 +10,7 @@ public class LineBet extends Bet {
 	
 
 	@Override
-	protected int calcBet(int number) {
+	protected int calcBetCode(int number) {
 		int line = (number - 1) / 6;
 		return line;
 	}

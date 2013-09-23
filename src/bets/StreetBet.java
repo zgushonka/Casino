@@ -10,7 +10,7 @@ public class StreetBet extends Bet {
 	
 
 	@Override
-	protected int calcBet(int number) {
+	protected int calcBetCode(int number) {
 		int line = (number - 1) / 3;
 		return line;
 	}

@@ -2,7 +2,7 @@ package bets;
 
 public class SplitHorizontalBet extends SmallSectorBet {
 	
-	private static final int RATE = 2;
+	private static final int RATE = 17;
 	
 	public SplitHorizontalBet () {
 		super (RATE);
@@ -10,20 +10,16 @@ public class SplitHorizontalBet extends SmallSectorBet {
 	
 
 	@Override
-	protected int calcBet(int number) {
-		
-		int betNumber = number;
-		betNumber = correctColumn(betNumber);
-		
-		return betNumber;
+	protected int calcBetCode(int number) {
+		return correctColumn(number);
 	}
 	
 	
 	@Override
-	protected boolean calcWin (int winningNumber) {		
-		int betNumber = getNumber();
+	protected boolean compareBetWithWin () {
 		
-		boolean betWin = ( numberMatch() || horizontalMatch() );
+		boolean betWin = (	numberMatchWith(NO_SHIFT) ||
+							numberMatchWith(HORIZONTAL_SHIFT) );
 		
 		return betWin;
 	}

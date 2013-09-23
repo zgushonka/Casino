@@ -10,7 +10,7 @@ public class CornerBet extends SmallSectorBet {
 
 	
 	@Override
-	protected int calcBet(int number) {
+	protected int calcBetCode(int number) {
 		int betNumber = number;
 		betNumber = correctColumn(betNumber);
 		betNumber = correctStreet(betNumber);
@@ -20,10 +20,12 @@ public class CornerBet extends SmallSectorBet {
 	
 	
 	@Override
-	protected boolean calcWin (int winningNumber) {
-		boolean betWin = false;
+	protected boolean compareBetWithWin () {
 		
-		
+		boolean betWin = ( 	numberMatchWith(NO_SHIFT) ||
+							numberMatchWith(VERTICAL_SHIFT) ||
+							numberMatchWith(HORIZONTAL_SHIFT) ||
+							numberMatchWith(CORNER_SHIFT) );
 		
 		return betWin;
 	}

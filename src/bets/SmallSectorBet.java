@@ -1,5 +1,6 @@
 package bets;
 
+// superclass for Split and Corner Bets
 public abstract class SmallSectorBet extends Bet {
 	
 	// constructor for subclasses
@@ -27,23 +28,13 @@ public abstract class SmallSectorBet extends Bet {
 		return betNumber;
 	}
 	
+	protected final int NO_SHIFT 			= 0;	
+	protected final int HORIZONTAL_SHIFT 	= 1;
+	protected final int VERTICAL_SHIFT 		= 3;
+	protected final int CORNER_SHIFT 		= 4;
 	
-	
-	protected boolean numberMatch() {
-		return getNumber() == getWinNumber();
-	}
-
-	protected boolean verticalMatch() {
-		return (getNumber() + 3) == getWinNumber();
-	}
-	
-	protected boolean horizontalMatch() {
-		return (getNumber() + 1) == getWinNumber();
+	protected boolean numberMatchWith(int shift) {
+		return (getBetCode() + shift) == getWinningNumber();
 	}
 	
-	protected boolean cornerlMatch() {
-		return (getNumber() + 4) == getWinNumber();
-	}
-	
-
 }

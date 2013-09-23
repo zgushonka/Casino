@@ -2,26 +2,47 @@ package bets;
 
 //	Base Class for all Bets
 public abstract class Bet {
-
 	
-	//	stake to win ratio
+	
+	
+	public boolean createBet (int number, int stake) {
+		
+		boolean betAccepted = setStake(stake) && setBet(number);
+		
+		return betAccepted;
+	}	
+	
+	
+	public int calcBetResult (int winningNumber) {
+		
+		boolean betWin = checkForWin (winningNumber);
+		
+		//	evaluate win coins
+		int betResult = 0;
+		
+		if (betWin) {
+			betResult = stake * rate;
+		} else {
+			betResult = stake * -1;
+		}
+		
+		return betResult;
+	}	
+	
+	
+//	stake to win ratio
 	private final int rate;
+	
+//	Constructor. 
 	protected Bet (int rate) {
+		
 		this.rate = rate;
 	}
 	
 	
 	
-	//	stake must be less than 10 coins
-	private static final int MIN_STAKE = 1;
-	private static final int MAX_STAKE = 10;
-	private boolean isStakeValid(int stake) {
-		return (MIN_STAKE <= stake) && (stake >= MAX_STAKE);
-	}
-		
-	
-	
 	private int stake;
+	
 	private boolean setStake(int stake) {
 		boolean StakeValid = isStakeValid(stake);
 		if ( StakeValid ) {
@@ -29,37 +50,27 @@ public abstract class Bet {
 		}
 		return StakeValid;
 	}
-		
 	
 	
-	//	numbers in roulette is between 1 and 36
-	//	zero disabled
-	private static final int MIN_NUMBER = 1;
-	private static final int MAX_NUMBER = 36;
-	protected boolean isNumberValid(int number) {
-		return ( (MIN_NUMBER <= number) && (number >= MAX_NUMBER) );
-	}
 	
-		
-	
-	//	storage for bet number/code number
-	//	if success returns true
+	//	storage for bet number
 	private int number;
+	//	betCode used for win decision
 	private int betCode;
-	protected boolean setBet(int number) {
+	
+	private boolean setBet(int number) {
 		boolean BetValid = isNumberValid(number);
 				
 		if ( BetValid ) {
 			this.number = number;
-			this.betCode = calcBet(number);
+			this.betCode = calcBetCode(number);
 		} 
 		return BetValid;
 	}
 	
-	
 	protected int getNumber() {
 		return number;
-	}
+	 }
 	
 	protected int getBetCode() {
 		return betCode;
@@ -68,32 +79,53 @@ public abstract class Bet {
 	
 	//	win predicate
 	private int winningNumber;
-	private boolean betWin(int winningNumber) {
-		boolean betWin = false;
+	
+	//	did we win? True or False
+	private boolean checkForWin(int winningNumber) {
 		
-		if ( isNumberValid(winningNumber) ) {
-			this.winningNumber = winningNumber; 
-			betWin = calcWin(winningNumber);
-		}
+		// here we can check WinNumber for Valid Value
 		
+		this.winningNumber = winningNumber; 
+	
+		boolean	betWin = compareBetWithWin();
 		return betWin;
 	}
-	
-	
-	protected int getWinNumber() {
+		
+	protected int getWinningNumber() {
 		return winningNumber;
 	}
 
 
-
-	protected boolean calcWin(int winningNumber) {
-		return this.number == calcBet(winningNumber);
+	//	same for all bets, except Split and Corner
+	protected boolean compareBetWithWin() {
+		return getBetCode() == calcBetCode( getWinningNumber() );
 	}
 	
 	
 	
 	//	calculate bet number for each bet type
-	abstract protected int calcBet(int number);
+	abstract protected int calcBetCode(int number);
+	
+	
+	
+	//	stake must be less than 10 coins
+	private static final int MIN_STAKE = 1;
+	private static final int MAX_STAKE = 10;
+	
+	private boolean isStakeValid(int stake) {
+		return (MIN_STAKE <= stake) && (stake <= MAX_STAKE);
+	}
+
+	
+	
+	//	numbers in roulette is between 1 and 36
+	//	zero disabled
+	private static final int MIN_NUMBER = 1;
+	private static final int MAX_NUMBER = 36;
+	
+	protected boolean isNumberValid(int number) {
+		return ( (MIN_NUMBER <= number) && (number <= MAX_NUMBER) );
+	}
 	
 	
 	
