@@ -11,12 +11,21 @@ public class CornerBet extends SmallSectorBet {
 	
 	@Override
 	protected int calcBet(int number) {
-		
 		int betNumber = number;
 		betNumber = correctColumn(betNumber);
 		betNumber = correctStreet(betNumber);
 		
 		return betNumber;
+	}
+	
+	
+	@Override
+	protected boolean calcWin (int winningNumber) {
+		boolean betWin = false;
+		
+		
+		
+		return betWin;
 	}
 	
 }

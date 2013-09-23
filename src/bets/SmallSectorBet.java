@@ -26,5 +26,24 @@ public abstract class SmallSectorBet extends Bet {
 		}
 		return betNumber;
 	}
+	
+	
+	
+	protected boolean numberMatch() {
+		return getNumber() == getWinNumber();
+	}
+
+	protected boolean verticalMatch() {
+		return (getNumber() + 3) == getWinNumber();
+	}
+	
+	protected boolean horizontalMatch() {
+		return (getNumber() + 1) == getWinNumber();
+	}
+	
+	protected boolean cornerlMatch() {
+		return (getNumber() + 4) == getWinNumber();
+	}
+	
 
 }

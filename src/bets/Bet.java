@@ -45,26 +45,49 @@ public abstract class Bet {
 	//	storage for bet number/code number
 	//	if success returns true
 	private int number;
+	private int betCode;
 	protected boolean setBet(int number) {
 		boolean BetValid = isNumberValid(number);
 				
 		if ( BetValid ) {
 			this.number = number;
+			this.betCode = calcBet(number);
 		} 
 		return BetValid;
 	}
 	
 	
+	protected int getNumber() {
+		return number;
+	}
+	
+	protected int getBetCode() {
+		return betCode;
+	}
+	
 	
 	//	win predicate
-	protected boolean betWin(int winningNumber) {
+	private int winningNumber;
+	private boolean betWin(int winningNumber) {
 		boolean betWin = false;
 		
 		if ( isNumberValid(winningNumber) ) {
-			betWin = (this.number == calcBet(winningNumber) );
+			this.winningNumber = winningNumber; 
+			betWin = calcWin(winningNumber);
 		}
 		
 		return betWin;
+	}
+	
+	
+	protected int getWinNumber() {
+		return winningNumber;
+	}
+
+
+
+	protected boolean calcWin(int winningNumber) {
+		return this.number == calcBet(winningNumber);
 	}
 	
 	

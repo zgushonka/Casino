@@ -17,6 +17,19 @@ public class SplitVerticalBet extends SmallSectorBet {
 		
 		return betNumber;
 	}
+	
+	
+	@Override
+	protected boolean calcWin (int winningNumber) {		
+		int betNumber = getNumber();
+		
+		boolean betWin = ( numberMatch() || verticalMatch() );
+		
+		return betWin;
+	}
+
+
+	
 
 }
 
