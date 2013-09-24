@@ -18,29 +18,42 @@ public class Casino {
 		Bet bet01 = new StrightBet(number, stake);		
 		
 		
-		int useMoney = 0;
+		int userMoney = 0;
 		
 		for (int i = 1; i < 37; i++) {
 			
 			int winInSpin = bet01.calcBetResult(i); 
 			
-			useMoney += winInSpin;
+			userMoney += winInSpin;
 			
-			System.out.println("winNumber is " +i+ "    winInSpin " +winInSpin+ "     current ballance =  " +useMoney);
+			System.out.println("winNumber is " +i+ "    winInSpin " +winInSpin+ "     current ballance =  " +userMoney);
 		}
 
 		
-	/*	
+		
+	  	number = 1;
+		stake = 1;
+		userMoney = 0;
+		
+		Bet bet02 = new StrightBet(number, stake);
+	 
 		Roulette roulette = new Roulette();
 		
-		for (int i = 1; i < 50; i++) {
+		// perform random roulette spin (croupie logic)
+		
+		
+		
+		int spinCount = 10;
+		for (int i = 1; i < spinCount; i++) {
 			
 			int winNumber = roulette.performSpin();
-			useMoney += bet01.calcBetResult(winNumber);
+			int winInSpin = bet01.calcBetResult(winNumber);
 			
-			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + useMoney);
+			userMoney += winInSpin;
+			
+			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + userMoney);
 		}
-	*/	
+	/*	*/	
 	}
 
 }
