@@ -43,7 +43,7 @@ public class Player {
 	
 	
 	
-	public boolean loginOk (String password) {
+	public boolean passwordIsValid (String password) {
 		return (this.password == password);
 	}
 	

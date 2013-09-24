@@ -6,8 +6,6 @@ import bets.*;
 //	20 September 2013
 
 
-
-
 public class Casino {
 	
 	public static void main(String[] args) {

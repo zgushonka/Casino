@@ -2,6 +2,7 @@ package casino;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Set;
 import java.util.UUID;
 
 //import javax.swing.text.StyledEditorKit.BoldAction;
+
 
 import bets.Bet;
 
@@ -36,7 +38,7 @@ public class Croupie {
 		players.clear();
 	}	
 	
-		
+	
 	protected void addBet(Bet bet, Player player)
 	{
 		bets.add(bet);
@@ -45,18 +47,23 @@ public class Croupie {
 	
 	
 	
-	private boolean manualSpin;	
+	private boolean enableManualSpin;	
 	
 	public boolean isManualSpin() {
-		return manualSpin;
+		return enableManualSpin;
 	}
 
 	public void setManualSpin(boolean manualSpin) {
-		this.manualSpin = manualSpin;
+		this.enableManualSpin = manualSpin;
 	}
 	
 	
-
+/*	
+	protected void playGame () {
+		//
+		Iterator<Bets> 
+	}
+/*	*/	
 	
 	// all TODO
 	// force roulette Spin
