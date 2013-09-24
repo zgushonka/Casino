@@ -31,7 +31,8 @@ public class Croupie {
 				OperationResult.PLAYER_ALREADY_REGISTERED;
 	}
 	
-	public void flushAllPlayers () {
+	public void flushAllPlayers ()
+	{
 		players.clear();
 	}	
 	
@@ -44,13 +45,19 @@ public class Croupie {
 	
 	
 	
+	public OperationResult processBet() {
+		return OperationResult.BET_WRONG;
+	}
+	
 	private boolean enableManualSpin;	
 	
-	public boolean isManualSpin() {
+	public boolean isManualSpin()
+	{
 		return enableManualSpin;
 	}
 
-	public void setManualSpin(boolean manualSpin) {
+	public void setManualSpin(boolean manualSpin)
+	{
 		this.enableManualSpin = manualSpin;
 	}
 	

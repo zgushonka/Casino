@@ -9,7 +9,6 @@ public class Player {
 	private final UUID id = UUID.randomUUID();
 	private int money;
 	
-	private boolean isAuthentified = false;
 	
 	public Player(String name, String password) {
 		
@@ -53,11 +52,12 @@ public class Player {
 	}
 	
 	
-	
+
+	private boolean isAuthentified = false;
 	
 	public boolean isPasswordOk (String password) {
 		isAuthentified = ( this.password == password );
 		return isAuthentified;
-	}
+	}	
 	
 }
