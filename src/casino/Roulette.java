@@ -3,7 +3,7 @@ package casino;
 public class Roulette {
 	
 	public Roulette() {
-		// generate ID for log file name
+		// TODO generate ID for log file name
 		
 		lastSpinResult = -1;	// invalid value for No spin situation
 	}
@@ -23,7 +23,7 @@ public class Roulette {
 
 		// write number and date to log file
 		writeResultToLog();
-		
+
 		return lastSpinResult;
 	}
 	

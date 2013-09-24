@@ -8,16 +8,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.swing.text.StyledEditorKit.BoldAction;
+//import javax.swing.text.StyledEditorKit.BoldAction;
 
 import bets.Bet;
 
 public class Croupie {
-	
-	// all TODO
-	
-	// list of players
-	// 
 	
 	//	list of registered players
 	private Set<Player> players = new HashSet<Player>();
@@ -37,21 +32,33 @@ public class Croupie {
 		}
 	}
 	
+	public void flushAllPlayers () {
+		players.clear();
+	}	
+	
+		
 	protected void addBet(Bet bet, Player player)
 	{
 		bets.add(bet);
-		betsToPlayer.put(bet.getId(), player.getId());
-		
-		
-		
+		betsToPlayer.put( bet.getId(), player.getId() );		
 	}
 	
 	
 	
+	private boolean manualSpin;	
+	
+	public boolean isManualSpin() {
+		return manualSpin;
+	}
+
+	public void setManualSpin(boolean manualSpin) {
+		this.manualSpin = manualSpin;
+	}
 	
 	
-	// map of bets : player
+
 	
+	// all TODO
 	// force roulette Spin
 		//	with time period 5s				- prime table
 		//	by user command "all bets done" - test table
