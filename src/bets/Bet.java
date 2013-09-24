@@ -24,6 +24,15 @@ public abstract class Bet {
 		return betResult;
 	}	
 	
+
+	
+	private UUID id = UUID.randomUUID();
+	
+	public UUID getId() {
+		return this.id;
+	}
+	
+	
 	
 //	stake to win ratio
 	private final int rate;
@@ -45,10 +54,7 @@ public abstract class Bet {
 	private int stake;
 	
 	private void setStake(int stake) {
-		if ( !isStakeValid(stake) ) {
-			// TODO exception
-		}
-		
+		checkStakeValidity(stake);		
 		this.stake = stake;
 	}
 	
@@ -59,11 +65,8 @@ public abstract class Bet {
 	//	betCode used for win decision
 	private int betCode;
 	
-	private void setBet(int number)
-	{
-		if ( !isNumberValid(number) ) {
-			// TODO exception
-		}
+	private void setBet(int number) {
+		checkNumberValidity(number);
 		
 		this.number = number;
 		this.betCode = calcBetCode(number);
@@ -113,8 +116,13 @@ public abstract class Bet {
 	private static final int MIN_STAKE = 1;
 	private static final int MAX_STAKE = 10;
 	
-	private boolean isStakeValid(int stake) {
-		return (MIN_STAKE <= stake) && (stake <= MAX_STAKE);
+	private void checkStakeValidity(int stake) {
+		if ( (MIN_STAKE <= stake) && (stake <= MAX_STAKE) ) {
+			// in range - OK
+		} else {
+			// out of range
+			// TODO exception
+		}
 	}
 
 	
@@ -124,15 +132,13 @@ public abstract class Bet {
 	private static final int MIN_NUMBER = 1;
 	private static final int MAX_NUMBER = 36;
 	
-	protected boolean isNumberValid(int number) {
-		return ( (MIN_NUMBER <= number) && (number <= MAX_NUMBER) );
-	}
-
-
-	private UUID id = UUID.randomUUID();
-	
-	public UUID getId() {
-		return this.id;
+	protected void checkNumberValidity(int number) {
+		if ( (MIN_NUMBER <= number) && (number <= MAX_NUMBER) ) {
+			// in range - OK
+		} else {
+			// out of range
+			// TODO exception
+		}
 	}
 	
 	
