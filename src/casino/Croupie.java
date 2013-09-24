@@ -25,12 +25,12 @@ public class Croupie {
 	//	binding bet to player
 	private Map<UUID, UUID> betsToPlayer = new HashMap<UUID, UUID>();
 	
-	protected void registerPlayer(Player player)
+	protected OperationResult registerPlayer(Player player)
 	{
-		boolean PlayerAdded = players.add(player);
-		
-		if ( !PlayerAdded ) {
-			// TODO exception
+		if ( players.add(player) ) {
+			return OperationResult.PLAYER_REGISTERED;
+		} else {
+			return OperationResult.PLAYER_ALREADY_REGISTERED;
 		}
 	}
 	
