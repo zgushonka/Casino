@@ -12,29 +12,35 @@ public class Casino {
 	
 	public static void main(String[] args) {
 		
-		Bet bet01 = new ColumnBet(1, 1);		
+		int number = 1;
+		int stake = 1;
 		
-		Roulette roulette = new Roulette();
+		Bet bet01 = new StrightBet(number, stake);		
 		
-		int win = 0;
+		
+		int useMoney = 0;
 		
 		for (int i = 1; i < 37; i++) {
 			
-			int winNumber = roulette.performSpin();
-			win += bet01.calcBetResult(i);
+			int winInSpin = bet01.calcBetResult(i); 
 			
-			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + win);
+			useMoney += winInSpin;
+			
+			System.out.println("winNumber is " +i+ "    winInSpin " +winInSpin+ "     current ballance =  " +useMoney);
 		}
+
 		
+	/*	
+		Roulette roulette = new Roulette();
 		
 		for (int i = 1; i < 50; i++) {
 			
 			int winNumber = roulette.performSpin();
-			win += bet01.calcBetResult(winNumber);
+			useMoney += bet01.calcBetResult(winNumber);
 			
-			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + win);
+			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + useMoney);
 		}
-		
+	*/	
 	}
 
 }
