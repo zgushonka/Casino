@@ -35,7 +35,7 @@ public class Casino {
 		stake = 1;
 		userMoney = 0;
 		
-		Bet bet02 = new StrightBet(number, stake);
+		Bet bet02 = new ColourBet(number, stake);
 	 
 		Roulette roulette = new Roulette();
 		
@@ -47,11 +47,11 @@ public class Casino {
 		for (int i = 1; i < spinCount; i++) {
 			
 			int winNumber = roulette.performSpin();
-			int winInSpin = bet01.calcBetResult(winNumber);
+			int winInSpin = bet02.calcBetResult(winNumber);
 			
 			userMoney += winInSpin;
 			
-			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + userMoney);
+			System.out.println("Spin number " +i+ "    winNumber is " +winNumber+ "    winInSpin " +winInSpin+ "   current ballance =  " + userMoney);
 		}
 	/*	*/	
 	}
