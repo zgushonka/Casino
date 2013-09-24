@@ -4,8 +4,8 @@ public class ColourBet extends Bet {
 	
 	private static final int RATE = 1;
 
-	public ColourBet() {
-		super (RATE);
+	public ColourBet(int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 	

@@ -4,8 +4,8 @@ public class HalfBet extends Bet {
 	
 	private static final int RATE = 1;
 
-	public HalfBet () {
-		super (RATE);
+	public HalfBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 
 	@Override

@@ -4,8 +4,8 @@ public class DozenBet extends Bet {
 	
 	private static final int RATE = 2;
 	
-	public DozenBet () {
-		super (RATE);
+	public DozenBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 

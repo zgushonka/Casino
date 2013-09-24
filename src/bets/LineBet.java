@@ -4,8 +4,8 @@ public class LineBet extends Bet {
 
 	private static final int RATE = 5;
 
-	public LineBet() {
-		super (RATE);
+	public LineBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 

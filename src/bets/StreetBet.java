@@ -4,8 +4,8 @@ public class StreetBet extends Bet {
 	
 	private static final int RATE = 11;
 
-	public StreetBet() {
-		super (RATE);
+	public StreetBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 

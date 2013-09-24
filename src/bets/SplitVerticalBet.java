@@ -4,8 +4,8 @@ public class SplitVerticalBet extends SmallSectorBet {
 	
 	private static final int RATE = 17;
 	
-	public SplitVerticalBet () {
-		super (RATE);
+	public SplitVerticalBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 

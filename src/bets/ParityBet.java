@@ -4,8 +4,8 @@ public class ParityBet extends Bet {
 	
 	private static final int RATE = 1;
 
-	public ParityBet() {
-		super (RATE);
+	public ParityBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 	

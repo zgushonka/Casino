@@ -4,17 +4,10 @@ import java.util.UUID;
 
 //	Base Class for all Bets
 public abstract class Bet {
-	
-	
-	
-	public boolean createBet (int number, int stake) {
-		
-		boolean betAccepted = setStake(stake) && setBet(number);
-		
-		return betAccepted;
-	}	
-	
-	
+
+	//	returns stake*rate if win
+	//	OR  
+	//	-stake if lose
 	public int calcBetResult (int winningNumber) {
 		
 		boolean betWin = checkForWin (winningNumber);
@@ -35,21 +28,28 @@ public abstract class Bet {
 //	stake to win ratio
 	private final int rate;
 	
-//	Constructor. 
-	protected Bet (int rate) {
+//	Constructor
+	protected Bet (int rate, int number, int stake) {
 		this.rate = rate;
+		createBet (number, stake);
 	}
+	
+	
+	private void createBet (int number, int stake) {
+		setStake(stake);
+		setBet(number);		
+	}	
 	
 	
 	
 	private int stake;
 	
-	private boolean setStake(int stake) {
-		boolean StakeValid = isStakeValid(stake);
-		if ( StakeValid ) {
-			this.stake = stake;
+	private void setStake(int stake) {
+		if ( !isStakeValid(stake) ) {
+			// TODO exception
 		}
-		return StakeValid;
+		
+		this.stake = stake;
 	}
 	
 	
@@ -59,14 +59,14 @@ public abstract class Bet {
 	//	betCode used for win decision
 	private int betCode;
 	
-	private boolean setBet(int number) {
-		boolean BetValid = isNumberValid(number);
-				
-		if ( BetValid ) {
-			this.number = number;
-			this.betCode = calcBetCode(number);
-		} 
-		return BetValid;
+	private void setBet(int number)
+	{
+		if ( !isNumberValid(number) ) {
+			// TODO exception
+		}
+		
+		this.number = number;
+		this.betCode = calcBetCode(number);
 	}
 	
 	public int getNumber() {
@@ -80,12 +80,11 @@ public abstract class Bet {
 	
 	//	win predicate
 	private int winningNumber;
-	private UUID id = UUID.randomUUID();
 	
 	//	did we win? True or False
 	private boolean checkForWin(int winningNumber) {
 		
-		// here we can check WinNumber for Valid Value
+		// here we can check WinNumber for Valid Value if necessary
 		
 		this.winningNumber = winningNumber; 
 	
@@ -130,8 +129,9 @@ public abstract class Bet {
 	}
 
 
+	private UUID id = UUID.randomUUID();
+	
 	public UUID getId() {
-		// TODO Auto-generated method stub
 		return this.id;
 	}
 	

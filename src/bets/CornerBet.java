@@ -4,8 +4,8 @@ public class CornerBet extends SmallSectorBet {
 	
 	private static final int RATE = 8;
 
-	public CornerBet () {
-		super (RATE);
+	public CornerBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 
 	

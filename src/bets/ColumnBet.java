@@ -4,8 +4,8 @@ public class ColumnBet extends Bet {
 		
 	private static final int RATE = 2;
 
-	public ColumnBet() {
-		super (RATE);
+	public ColumnBet (int number, int stake) {
+		super (RATE, number, stake);
 	}
 	
 

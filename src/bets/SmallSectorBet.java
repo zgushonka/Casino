@@ -4,8 +4,8 @@ package bets;
 public abstract class SmallSectorBet extends Bet {
 	
 	// constructor for subclasses
-	protected SmallSectorBet (int rate) {
-		super (rate);
+	protected SmallSectorBet (int rate, int number, int stake) {
+		super (rate, number, stake);
 	}
 	
 	
