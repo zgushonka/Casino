@@ -1,5 +1,7 @@
 package bets;
 
+import java.util.UUID;
+
 //	Base Class for all Bets
 public abstract class Bet {
 	
@@ -78,6 +80,7 @@ public abstract class Bet {
 	
 	//	win predicate
 	private int winningNumber;
+	private UUID id = UUID.randomUUID();
 	
 	//	did we win? True or False
 	private boolean checkForWin(int winningNumber) {
@@ -124,6 +127,12 @@ public abstract class Bet {
 	
 	protected boolean isNumberValid(int number) {
 		return ( (MIN_NUMBER <= number) && (number <= MAX_NUMBER) );
+	}
+
+
+	public UUID getId() {
+		// TODO Auto-generated method stub
+		return this.id;
 	}
 	
 	

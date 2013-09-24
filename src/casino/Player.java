@@ -8,14 +8,11 @@ public class Player {
 
 	private final String password;
 	
-	private final UUID id;
+	private final UUID id = UUID.randomUUID();
 	
 	public Player(String name, String password) {
 		this.name = name;
 		this.password = password;
-		
-		id = UUID.randomUUID();
-
 	}
 	
 	public UUID getId() {
