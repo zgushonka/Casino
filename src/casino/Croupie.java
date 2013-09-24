@@ -2,7 +2,6 @@ package casino;
 
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Map;
@@ -27,11 +26,9 @@ public class Croupie {
 	
 	protected OperationResult registerPlayer(Player player)
 	{
-		if ( players.add(player) ) {
-			return OperationResult.PLAYER_REGISTERED;
-		} else {
-			return OperationResult.PLAYER_ALREADY_REGISTERED;
-		}
+		return players.add(player) ?
+				OperationResult.PLAYER_REGISTERED :
+				OperationResult.PLAYER_ALREADY_REGISTERED;
 	}
 	
 	public void flushAllPlayers () {
@@ -63,7 +60,7 @@ public class Croupie {
 		//
 		Iterator<Bets> 
 	}
-/*	*/	
+/*	*/
 	
 	// all TODO
 	// force roulette Spin

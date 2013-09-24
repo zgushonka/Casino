@@ -12,7 +12,8 @@ public class ColourBet extends Bet {
 		super (RATE, number, stake);
 	}
 
-	private static final List<Integer> blacks = Arrays.asList(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35);
+	private static final List<Integer> blacks =
+			Arrays.asList(2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35);
 	
 	@Override
 	protected int calcBetCode (int number) {

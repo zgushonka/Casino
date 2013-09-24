@@ -13,43 +13,39 @@ public class Player {
 	
 	public Player(String name, String password) {
 		
-		checkName(name);
-		checkPassword(password);
+		checkNameString(name);
+		checkPasswordString(password);
 		
 		this.name = name;
 		this.password = password;
 		money = 0;
 	}
 	
-		
-	private void checkPassword(String password) {
-		// TODO Auto-generated method stub
-		
+	private void checkNameString (String name) {
+		if (name.length() < 4) {
+			// TODO exception
+		}
+	}
+	
+	private void checkPasswordString (String password) {
+		if (password.length() < 6) {
+			// TODO exception
+		}
 	}
 
-
-	private void checkName(String name2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
+	
 	public String getName() {
 		return name;
 	}
-	
-	
 
 	public UUID getId() {
 		return id;
 	}
 
-	
-	
-	
 	public int getMoney() {
 		return money;
 	}
+	
 	
 	// package access level (for Croupie)
 	protected void applyBetResult(int result) {
@@ -60,7 +56,7 @@ public class Player {
 	
 	
 	public boolean isPasswordOk (String password) {
-		isAuthentified = this.password == password;
+		isAuthentified = ( this.password == password );
 		return isAuthentified;
 	}
 	
