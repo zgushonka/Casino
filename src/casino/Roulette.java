@@ -5,7 +5,7 @@ public class Roulette {
 	public Roulette() {
 		// generate ID for log file name
 		
-		lastSpinResult = -2;	// invalid value for No spin situation
+		lastSpinResult = -1;	// invalid value for No spin situation
 	}
 	
 	private int lastSpinResult;

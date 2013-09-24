@@ -5,8 +5,9 @@ public class Croupie {
 	// all TODO
 	
 	// list of players
+	// 
 		
-	// list of bets
+	// map of bets : player
 	
 	// force roulette Spin
 		//	with time period 5s				- prime table

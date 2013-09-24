@@ -28,7 +28,7 @@ public abstract class SmallSectorBet extends Bet {
 		return betNumber;
 	}
 	
-	protected final int NO_SHIFT 			= 0;	
+	protected final int NO_SHIFT 			= 0;
 	protected final int HORIZONTAL_SHIFT 	= 1;
 	protected final int VERTICAL_SHIFT 		= 3;
 	protected final int CORNER_SHIFT 		= 4;

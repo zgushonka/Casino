@@ -23,6 +23,15 @@ public class Casino {
 		
 		int win = 0;
 		
+		for (int i = 1; i < 37; i++) {
+			
+			int winNumber = roulette.performSpin();
+			win += bet01.calcBetResult(i);
+			
+			System.out.println("Spin number " + i + ", winNumber is " + winNumber + ", current ballance =  " + win);
+		}
+		
+		
 		for (int i = 1; i < 50; i++) {
 			
 			int winNumber = roulette.performSpin();
