@@ -1,8 +1,8 @@
 package talk;
 
-public class commandRequest extends Request {
+public class CommandRequest extends Request {
 	
-	public commandRequest (String userid, String password, String command) {
+	public CommandRequest (String userid, String password, String command) {
 		setUserid(userid);
 		setPlayerPassword(password);
 		setCommand(command);
