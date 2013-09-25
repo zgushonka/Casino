@@ -2,7 +2,6 @@ package talk;
 
 public abstract class Request {
 
-    private String command;
     /**
      * @return the command
      */
@@ -12,7 +11,7 @@ public abstract class Request {
     /**
      * @param command the command to set
      */
-    public void setCommand(String command) {
+    protected void setCommand(String command) {
         this.command = command;
     }
     /**
@@ -24,7 +23,7 @@ public abstract class Request {
     /**
      * @param userid the userid to set
      */
-    public void setUserid(String userid) {
+    protected void setUserid(String userid) {
         this.userid = userid;
     }
     /**
@@ -60,7 +59,7 @@ public abstract class Request {
     /**
      * @param tableType the tableType to set
      */
-    public void setTableType(String tableType) {
+    protected void setTableType(String tableType) {
         this.tableType = tableType;
     }
     /**
@@ -72,7 +71,7 @@ public abstract class Request {
     /**
      * @param betType the betType to set
      */
-    public void setBetType(String betType) {
+    protected void setBetType(String betType) {
         this.betType = betType;
     }
     /**
@@ -84,7 +83,7 @@ public abstract class Request {
     /**
      * @param stake the stake to set
      */
-    public void setStake(int stake) {
+    protected void setStake(int stake) {
         this.stake = stake;
     }
     /**
@@ -96,11 +95,12 @@ public abstract class Request {
     /**
      * @param number the number to set
      */
-    public void setNumber(int number) {
+    protected void setNumber(int number) {
         this.number = number;
     }
     // can be register, all bets done, perform spin (test table), make bet, deleteAllPlayers(admin)
     // Main table register, makeBet
+    private String command;
     private String userid; //for bet
     private String playerName; //optional - not for bet
     private String playerPassword; // mandatory

@@ -1,15 +1,16 @@
 package talk;
 
-public class SpinRequest extends Request {
+public class commandRequest extends Request {
 	/*
 	- all bets done, perform spin (test table)
 		UUID
 		password
 	/*	*/
 	
-	public SpinRequest (String userid, String password) {
+	public commandRequest (String userid, String password, String command) {
 		setUserid(userid);
 		setPlayerPassword(password);
+		setCommand(command);
 	}
 	
 }
