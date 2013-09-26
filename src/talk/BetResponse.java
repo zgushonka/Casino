@@ -1,12 +1,21 @@
 package talk;
 
+
 public class BetResponse extends Response {
 	
-	public BetResponse (String userid, String command, String answer, int stake, int number, String betType) {
+	public BetResponse (String userid, String command, String answer, String tableType, int stake, int number, String betType) {
 		super (userid, command, answer);
 		setStake(stake);
+		setTableType(tableType);
 		setNumber(number);
 		setBetType(betType);
+	}
+	
+	public String getTableType() {
+		return tableType;
+	}
+	protected void setTableType(String tableType) {
+		this.tableType = tableType;
 	}
 	
 	public int getStake() {
@@ -30,9 +39,9 @@ public class BetResponse extends Response {
 		this.betType = betType;
 	}
 
+	private String tableType;
 	private int stake;
 	private int number;
 	private String betType;
-		
 	
 }
